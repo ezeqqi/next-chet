@@ -1,0 +1,38 @@
+<main class="home-container">
+  <section class="w-1/3">
+    <article class="mb-4 flex justify-center">
+      <img
+        class="size-40 bg-white border border-blue-950 rounded-lg p-4"
+        alt="temporary_logo"
+        src="assets/msn_logo.jpg"
+      />
+    </article>
+    <article class="p-6 rounded-lg">
+      <form class="flex flex-col gap-y-2" (submit)="submit($event)">
+        <div>
+          <label for="email">Nickname</label>
+          <input
+            type="text"
+            class="input-class"
+            (ngModel)="loginForm.nickname"
+          />
+        </div>
+        <div>
+          <label for="email">Password</label>
+          <input
+            type="password"
+            class="input-class"
+            (ngModel)="loginForm.password"
+          />
+        </div>
+        <button type="submit"  class="btn-class gradient-btn">
+          Log In
+        </button>
+      </form>
+    </article>
+    <article class="px-6 flex flex-col md:flex-row justify-between">
+      <a href="#" class="w-full hover:underline">Forgot your password?</a>
+      <a href="#" class="w-full hover:underline md:text-right">Create a new account</a>
+    </article>
+  </section>
+</main>

@@ -1,0 +1,15 @@
+.home-container {
+  @apply flex flex-col items-center justify-center min-h-screen text-blue-950 gradient-background
+}
+.gradient-background {
+  @apply bg-gradient-to-t from-white from-15% via-blue-100 to-white
+}
+.gradient-btn {
+  @apply bg-gradient-to-b from-white to-gray-200
+}
+.input-class {
+  @apply w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-950
+}
+.btn-class {
+  @apply mt-4 font-bold border border-blue-950 py-2 px-4 rounded-md
+}

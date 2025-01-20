@@ -5,11 +5,15 @@
   "projects": {
     "next-chet": {
       "projectType": "application",
+<<<<<<< HEAD
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
         }
       },
+=======
+      "schematics": {},
+>>>>>>> 78d64fc (initial commit)
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -24,13 +28,20 @@
               "zone.js"
             ],
             "tsConfig": "tsconfig.app.json",
+<<<<<<< HEAD
             "inlineStyleLanguage": "scss",
+=======
+>>>>>>> 78d64fc (initial commit)
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
+<<<<<<< HEAD
               "src/styles.scss"
+=======
+              "src/styles.css"
+>>>>>>> 78d64fc (initial commit)
             ],
             "scripts": []
           },
@@ -84,13 +95,20 @@
               "zone.js/testing"
             ],
             "tsConfig": "tsconfig.spec.json",
+<<<<<<< HEAD
             "inlineStyleLanguage": "scss",
+=======
+>>>>>>> 78d64fc (initial commit)
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
+<<<<<<< HEAD
               "src/styles.scss"
+=======
+              "src/styles.css"
+>>>>>>> 78d64fc (initial commit)
             ],
             "scripts": []
           }

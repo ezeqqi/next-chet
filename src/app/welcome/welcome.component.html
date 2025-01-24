@@ -8,21 +8,21 @@
       />
     </article>
     <article class="p-6 rounded-lg">
-      <form class="flex flex-col gap-y-2" (submit)="submit($event)">
+      <form class="flex flex-col gap-y-2" [formGroup]="loginForm" (ngSubmit)="submit()">
         <div>
-          <label for="email">Nickname</label>
+          <label for="nickname">Nickname</label>
           <input
+            formControlName="nickname"
             type="text"
             class="input-class"
-            (ngModel)="loginForm.nickname"
           />
         </div>
         <div>
-          <label for="email">Password</label>
+          <label for="password">Password</label>
           <input
+            formControlName="password"
             type="password"
             class="input-class"
-            (ngModel)="loginForm.password"
           />
         </div>
         <button type="submit"  class="btn-class gradient-btn">

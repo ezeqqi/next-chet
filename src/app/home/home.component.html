@@ -1,0 +1,10 @@
+<main>
+  <p class="p-5">
+    Home Works
+  </p>
+  @for (user of users; track user) {
+    <li>{{ user }}</li>
+    } @empty {
+    <li>There are no users.</li>
+    }
+</main>

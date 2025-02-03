@@ -2,10 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
 import { LoginRequest } from '@/app/models/login-request.model';
-
+import { Router } from '@angular/router';
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+  ) {}
   private readonly baseUrl = 'http://localhost:3000';
   login(loginData: LoginRequest): Observable<any> {
     return this.http.post(`${this.baseUrl}/auth/login`, loginData).pipe(
@@ -25,7 +28,8 @@ export class AuthService {
     return this.http.get(`${this.baseUrl}/users`);
   }
   clearToken(): void {
-    localStorage.removeItem('jwt_token'); // Remove the token
+    localStorage.removeItem('jwt_token');
+    this.router.navigate(['/welcome']);
   }
 
   getToken(): string | null {

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { signal, Component, OnInit, inject } from '@angular/core';
 import { AuthService } from '@/app/auth/auth.service';
+import { catchError } from 'rxjs';
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -8,21 +9,27 @@ import { AuthService } from '@/app/auth/auth.service';
   styleUrl: './home.component.css',
 })
 export class HomeComponent implements OnInit {
-  constructor(private authService: AuthService) {}
-  users: [] = [];
-  ngOnInit() {
+  authService = inject(AuthService);
+  users = signal<Array<any>>([]);
+
+  ngOnInit(): void {
     this.getUsers();
   }
 
   getUsers() {
-    this.authService.getUsers().subscribe({
-      next: (response) => {
-        console.log('users :', response);
-        this.users = response;
-      },
-      error: (error) => {
-        console.error('get failed:', error);
-      },
-    });
+    this.authService
+      .getUsers()
+      .pipe(
+        catchError((err) => {
+          console.log('error get users', err);
+          throw err;
+        }),
+      )
+      .subscribe({
+        next: (users) => {
+          console.log('users: ', users);
+          this.users.set(users);
+        },
+      });
   }
 }

@@ -1,10 +1,16 @@
-<main>
-  <p class="p-5">
+<main class="p-5">
+  <p >
     Home Works
   </p>
-  @for (user of users; track user) {
-    <li>{{ user }}</li>
+  <ul class="p-5">
+    @for (user of users(); track user.id) {
+    <li>
+      <p style="font-size: large;">
+        <span>{{ user.id }} - </span>{{ user.nickname }}
+      </p>
+    </li>
     } @empty {
-    <li>There are no users.</li>
+      <li>There are no users.</li>
     }
+  </ul>
 </main>
